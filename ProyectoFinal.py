@@ -32,7 +32,7 @@ def ingresarVenta():
             valor[x][cont[x]]= valorx
             cantidad[x][cont[x]]= cantidadx
             cont[x] = cont[x] + 1
-            areaMatriz.insert(END, "\nSe agregó un nuevo productos")
+            areaMatriz.insert(END, "\nSe agregó un nuevo producto")
     else:
         areaMatriz.insert(END, "\nINGRESO INVÁLIDO")
 
@@ -128,7 +128,7 @@ areasecond.insert(END, "Para Buscar!:\nnombre + numero del mes + buscar.\ncatego
 manejo = Label(operaciones, text = "SECCION INVENTARIO!!").grid(row = 0, column = 1)
 CambioColum = Label(operaciones, text = "Buscar Producto por nombre: ").grid(row = 1, column = 0)
 cambioFila = Label(operaciones, text = "Buscar Producto por Categoría: ").grid(row = 2, column = 0)
-numero = Label(operaciones, text = "Numero Del Mes: ").grid(row = 3, column = 0)
+numero = Label(operaciones, text = "Número Del Mes: ").grid(row = 3, column = 0)
 
 # Entradas segunda pestaña
 entradaPosCol = Entry(operaciones, width = 20)
