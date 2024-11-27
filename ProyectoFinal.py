@@ -55,6 +55,29 @@ def reporteTotalMes():
     else:
         areasecond.insert(END, "\nMes inválido")
 
+def buscarProducto():
+    mes = int(entradaNum.get().strip())
+    nombre = entradaColum.get().strip()
+    tipo = entradaFilas.get().strip()
+    nombre_buscar = entradaPosCol.get().strip().upper()
+    tipo_buscar = entradaPosFil.get().strip().upper()
+
+    if 1 <= mes and mes <= 12:
+        x = mes - 1
+        areasecond.delete("1.0", END)
+        encontrado = 0
+
+        for l in range(cont[x]):
+            if (nombre_buscar and nombre_buscar == nombre[x][l]) or (tipo_buscar and tipo_buscar == tipo[x][l]):
+                producto_info = f"Producto: {nombre[x][l]}, Tipo: {tipo[x][l]} \nCantidad: {cantidad[x][l]}, Valor Unitario: {valor[x][l]}\n"
+                areasecond.insert(END, producto_info)
+                encontrado += 1
+
+        if encontrado == 0:
+            areasecond.insert(END, "Producto no encontrado en el mes especificado.\n")
+
+    else:
+        areasecond.insert(END, "\nMes inválido")
 
 
 # ---------------- INTERFAZ GUI -----------------
@@ -127,7 +150,7 @@ botonImprimir = Button(ingreso, text = "Ingresar Venta :D", command = ingresarVe
 botonImprimir.grid(row=5, column=1)
 botonIngresar = Button(operaciones, text = "Reporte Total del Mes", command = reporteTotalMes)
 botonIngresar.grid(row=4, column = 0)
-botonImp = Button(operaciones, text = "    Buscar    ")
+botonImp = Button(operaciones, text = "    Buscar    ", command = buscarProducto)
 botonImp.grid(row=4, column = 1)
 
 matriz.mainloop()
