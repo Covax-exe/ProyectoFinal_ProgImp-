@@ -57,8 +57,6 @@ def reporteTotalMes():
 
 def buscarProducto():
     mes = int(entradaNum.get().strip())
-    nombre = entradaColum.get().strip()
-    tipo = entradaFilas.get().strip()
     nombre_buscar = entradaPosCol.get().strip().upper()
     tipo_buscar = entradaPosFil.get().strip().upper()
 
