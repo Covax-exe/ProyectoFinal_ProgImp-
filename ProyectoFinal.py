@@ -66,7 +66,7 @@ def buscarProducto():
         encontrado = 0
 
         for l in range(cont[x]):
-            if (nombre_buscar and nombre_buscar == nombre[x][l]) or (tipo_buscar and tipo_buscar == tipo[x][l]):
+            if (nombre_buscar == nombre[x][l]) or (tipo_buscar == tipo[x][l]):
                 producto_info = f"Producto: {nombre[x][l]}, Tipo: {tipo[x][l]} \nCantidad: {cantidad[x][l]}, Valor Unitario: {valor[x][l]}\n"
                 areasecond.insert(END, producto_info)
                 encontrado += 1
